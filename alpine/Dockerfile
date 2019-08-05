@@ -83,9 +83,4 @@ RUN cd /opt/php-src/php-${PHP_VERSION} \
 
 RUN pecl install xdebug
 
-COPY bash/.bashrc bash/.profile /root/
-COPY bash/.bashrc bash/.profile /var/www/
-
-RUN sh -c "source ~/.bashrc"
-
 RUN rm -Rf /opt/php-src; rm -Rf /var/cache/apk/*;
