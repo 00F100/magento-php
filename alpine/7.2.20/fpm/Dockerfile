@@ -9,9 +9,9 @@ COPY ["7.2.20/transfer-libs/libexslt.so.0", "7.2.20/transfer-libs/libstdc++.so.6
 
 RUN apk update \
     && apk add shadow \
-    && useradd -u ${USER_ID} -d /var/www www-data -s /bin/bash -M \
+    && useradd -u ${USER_ID} -d /var/www www-data -s /bin/sh -M \
     && mkdir -p /var/www/html \
-    && rm -Rf /var/cache/apk/*
+    && rm -Rf /var/cache/apk 
 
 VOLUME /var/www/html /var/log/php /opt/php/var/log/
 

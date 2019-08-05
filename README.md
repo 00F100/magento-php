@@ -10,12 +10,12 @@ If you have different, please build a local image.
 
 ##### Simple use:
 ```
-$ docker run -it 00f100/magento-php-cli:7.2.20-alpine
+$ docker run -it --rm --user www-data 00f100/magento-php-cli:7.2.20-alpine
 ```
 
 ##### Custom php.ini
 ```
-docker run -it --rm -v path/to/php.ini:/opt/php/lib/php.ini 00f100/magento-php-cli:7.2.20-alpine
+docker run -it --rm --user www-data -v path/to/php.ini:/opt/php/lib/php.ini 00f100/magento-php-cli:7.2.20-alpine
 ```
 
 ##### Build image
