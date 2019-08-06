@@ -19,7 +19,7 @@ $ docker run -it --rm --user www-data -v path/to/php.ini:/opt/php/lib/php.ini -v
 ```
 $ git clone git@github.com:00F100/magento-php.git
 $ cd magento-php
-$ make alpine-php-cli-fpm-7-2-20
+$ make alpine-php-cli-fpm-7-0-33
 ```
 
 ![](console.png)
