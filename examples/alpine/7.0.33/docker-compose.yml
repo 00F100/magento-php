@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+
+  php-7.0.33:
+    container_name: php-7.0.33
+    image: 00f100/magento-php-fpm:7.0.33-alpine
+    volumes:
+      - ${PWD}/fpm/php.ini:/opt/php/fpm/php.ini
+      - ${PWD}/fpm/php-fpm.conf:/opt/php/etc/php-fpm.conf
+      - ${PWD}/fpm/www.conf:/opt/php/etc/php-fpm.d/www.conf
+      - ${PWD}:/var/www/html

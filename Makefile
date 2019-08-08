@@ -4,8 +4,6 @@ alpine-php-cli-fpm-7-2-20:
 	docker image build --build-arg USER_ID=$(shell id -u) --build-arg PHP_VERSION=7.2.20 -t 00f100/magento-php:temp alpine;
 	mkdir -p $(PWD)/alpine/7.2.20/transfer-data;
 	mkdir -p $(PWD)/alpine/7.2.20/transfer-libs;
-	docker volume rm transfer_data
-	docker volume rm transfer_libs
 	docker volume create \
 	    --driver local \
 	    --opt type=none \
@@ -31,8 +29,6 @@ alpine-php-cli-fpm-7-1-30:
 	docker image build --build-arg USER_ID=$(shell id -u) --build-arg PHP_VERSION=7.1.30 -t 00f100/magento-php:temp alpine;
 	mkdir -p $(PWD)/alpine/7.1.30/transfer-data;
 	mkdir -p $(PWD)/alpine/7.1.30/transfer-libs;
-	docker volume rm transfer_data
-	docker volume rm transfer_libs
 	docker volume create \
 	    --driver local \
 	    --opt type=none \
@@ -58,8 +54,6 @@ alpine-php-cli-fpm-7-0-33:
 	docker image build --build-arg USER_ID=$(shell id -u) --build-arg PHP_VERSION=7.0.33 -t 00f100/magento-php:temp alpine;
 	mkdir -p $(PWD)/alpine/7.0.33/transfer-data;
 	mkdir -p $(PWD)/alpine/7.0.33/transfer-libs;
-	docker volume rm transfer_data
-	docker volume rm transfer_libs
 	docker volume create \
 	    --driver local \
 	    --opt type=none \
