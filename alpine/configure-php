@@ -1,0 +1,74 @@
+#!/bin/sh
+
+if [ ${PHP_VERSION} = "7.0.33" ]; then
+    ./configure \
+        --prefix=/opt/php \
+        --with-zlib-dir \
+        --with-freetype-dir \
+        --with-libxml-dir=/usr \
+        --with-curl \
+        --with-mcrypt \
+        --enable-gd-native-ttf \
+        --with-zlib \
+        --with-gd \
+        --with-mhash \
+        --with-pcre-regex \
+        --with-pdo-mysql \
+        --with-mysqli \
+        --with-jpeg-dir=/usr \
+        --with-png-dir=/usr \
+        --with-openssl \
+        --with-fpm-user=www-data \
+        --with-fpm-group=www-data \
+        --with-libdir=/usr/lib \
+        --with-gettext \
+        --with-xmlrpc \
+        --with-xsl \
+        --enable-mbstring \
+        --enable-soap \
+        --enable-bcmath \
+        --enable-zip \
+        --enable-opcache \
+        --enable-fpm \
+        --enable-maintainer-zts \
+        --disable-rpath \
+        --without-sqlite3 \
+        --without-pdo-sqlite \
+        --without-pgsql
+        # --enable-intl \
+else
+    ./configure \
+        --prefix=/opt/php \
+        --with-zlib-dir \
+        --with-freetype-dir \
+        --with-libxml-dir=/usr \
+        --with-curl \
+        --with-zlib \
+        --with-gd \
+        --with-mhash \
+        --with-pcre-regex \
+        --with-pdo-mysql \
+        --with-mysqli \
+        --with-jpeg-dir=/usr \
+        --with-png-dir=/usr \
+        --with-openssl \
+        --with-fpm-user=www-data \
+        --with-fpm-group=www-data \
+        --with-libdir=/usr/lib \
+        --with-gettext \
+        --with-xmlrpc \
+        --with-xsl \
+        --enable-mbstring \
+        --enable-soap \
+        --enable-bcmath \
+        --enable-zip \
+        --enable-opcache \
+        --enable-fpm \
+        --enable-intl \
+        --enable-maintainer-zts \
+        --disable-rpath \
+        --without-sqlite3 \
+        --without-pdo-sqlite \
+        --without-pgsql \
+        --with-sodium=shared
+fi
