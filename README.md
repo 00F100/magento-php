@@ -22,7 +22,7 @@ To view your UID execute: `$ id -u`
 
 ## Build local image
 
-| SO | Version | Command |
+| SO | PHP Version | Command |
 |---|---|---|
 | Alpine | 7.3.8 | `$ make alpine-php-cli-fpm-7-3-8` |
 | Alpine | 7.2.21 | `$ make alpine-php-cli-fpm-7-2-21` |
