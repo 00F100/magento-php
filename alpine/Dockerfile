@@ -35,7 +35,7 @@ RUN chmod +x /usr/local/bin/configure-php \
         g++ \
         libsodium-dev \
         libgc++ \
-        libzip \
+        libzip-dev \
         zip \
     && mkdir -p /opt/php/fpm \
     && mkdir -p /opt/php-src \
