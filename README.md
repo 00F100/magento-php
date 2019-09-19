@@ -4,6 +4,8 @@ All images have UID=1000
 
 If you have different, please [build a local image](#build-local-image).
 
+To view your UID execute: `$ id -u`
+
 ## Versions PHP
 
 | SO | PHP CLI + Composer + NPM | PHP FPM |
