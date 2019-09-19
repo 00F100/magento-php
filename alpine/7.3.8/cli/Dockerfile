@@ -6,7 +6,7 @@ ENV PATH "/opt/php/bin:/opt/php/sbin:$PATH"
 ENV PS1="┌───────────────────\n│[\033[0;31m\e[1m\u\e[0m\033[0m]@[\e[34m\php 7.3.8\033[0m][\e[34mcomposer 1.9.0\033[0m][\e[34mnpm 6.9.0\033[0m]\n│[\[\e[32m\]\w\[\e[0m\]]\n└─╼ "
 
 COPY 7.3.8/transfer-data /opt/php
-COPY ["7.3.8/transfer-libs/libexslt.so.0", "7.3.8/transfer-libs/libstdc++.so.6", "7.3.8/transfer-libs/libintl.so.8", "7.3.8/transfer-libs/libpng16.so.16", "7.3.8/transfer-libs/libjpeg.so.8", "7.3.8/transfer-libs/libcurl.so.4", "7.3.8/transfer-libs/libfreetype.so.6", "7.3.8/transfer-libs/libicuio.so.64", "7.3.8/transfer-libs/libicui18n.so.64", "7.3.8/transfer-libs/libicuuc.so.64", "7.3.8/transfer-libs/libgcc_s.so.1", "7.3.8/transfer-libs/libxml2.so.2", "7.3.8/transfer-libs/libxslt.so.1", "7.3.8/transfer-libs/libgcrypt.so.20", "7.3.8/transfer-libs/libnghttp2.so.14", "7.3.8/transfer-libs/libbz2.so.1", "7.3.8/transfer-libs/libicudata.so.64", "7.3.8/transfer-libs/libgpg-error.so.0", "/usr/lib/"]
+COPY ["7.3.8/transfer-libs/libexslt.so.0", "7.3.8/transfer-libs/libstdc++.so.6", "7.3.8/transfer-libs/libintl.so.8", "7.3.8/transfer-libs/libpng16.so.16", "7.3.8/transfer-libs/libjpeg.so.8", "7.3.8/transfer-libs/libcurl.so.4", "7.3.8/transfer-libs/libfreetype.so.6", "7.3.8/transfer-libs/libicuio.so.64", "7.3.8/transfer-libs/libicui18n.so.64", "7.3.8/transfer-libs/libicuuc.so.64", "7.3.8/transfer-libs/libgcc_s.so.1", "7.3.8/transfer-libs/libxml2.so.2", "7.3.8/transfer-libs/libxslt.so.1", "7.3.8/transfer-libs/libgcrypt.so.20", "7.3.8/transfer-libs/libnghttp2.so.14", "7.3.8/transfer-libs/libbz2.so.1", "7.3.8/transfer-libs/libicudata.so.64", "7.3.8/transfer-libs/libgpg-error.so.0", "7.3.8/transfer-libs/libzip.so.5", "/usr/lib/"]
 
 RUN apk update \
     && apk add --update shadow git nodejs npm \
