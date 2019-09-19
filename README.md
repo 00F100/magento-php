@@ -2,7 +2,7 @@
 
 All images have UID=1000
 
-If you have different, please build a local image.
+If you have different, please [build a local image](#build-local-image).
 
 ## Versions PHP
 
@@ -17,3 +17,13 @@ If you have different, please build a local image.
 |---|---|
 | Nginx | [`1.17.3`](https://hub.docker.com/_/nginx) |
 | MySQL | [`5.7.27`](https://hub.docker.com/_/mysql) |
+
+## Build local image
+
+| SO | Version | Command |
+|---|---|---|
+| Alpine | 7.3.8 | `$ make alpine-php-cli-fpm-7-3-8` |
+| Alpine | 7.2.21 | `$ make alpine-php-cli-fpm-7-2-21` |
+| Alpine | 7.1.30 | `$ make alpine-php-cli-fpm-7-1-30` |
+| Alpine | 7.0.33 | `$ make alpine-php-cli-fpm-7-0-33` |
+| Ubuntu | 7.3.8 | `$ make ubuntu-php-cli-fpm-7-3-8` |
