@@ -1,4 +1,38 @@
-.PHONY: install alpine-php-cli-fpm-7-23-8 alpine-php-cli-fpm-7-2-21 alpine-php-cli-fpm-7-1-30 alpine-php-cli-fpm-7-0-33
+.PHONY: install ubuntu-php-cli-fpm-7-23-8 alpine-php-cli-fpm-7-23-8 alpine-php-cli-fpm-7-2-21 alpine-php-cli-fpm-7-1-30 alpine-php-cli-fpm-7-0-33
+
+ubuntu-php-cli-fpm-7-3-8:
+	docker image build --build-arg USER_ID=$(shell id -u) --build-arg PHP_VERSION=7.3.8 -t 00f100/magento-php:temp ubuntu;
+	mkdir -p $(PWD)/ubuntu/7.3.8/transfer-data;
+	mkdir -p $(PWD)/ubuntu/7.3.8/transfer-libs;
+	mkdir -p $(PWD)/ubuntu/7.3.8/transfer-libs2;
+	docker volume create \
+	    --driver local \
+	    --opt type=none \
+	    --opt device=$(PWD)/ubuntu/7.3.8/transfer-data \
+	    --opt o=bind \
+	    transfer_data;
+	docker volume create \
+	    --driver local \
+	    --opt type=none \
+	    --opt device=$(PWD)/ubuntu/7.3.8/transfer-libs \
+	    --opt o=bind \
+	    transfer_libs;
+	docker volume create \
+	    --driver local \
+	    --opt type=none \
+	    --opt device=$(PWD)/ubuntu/7.3.8/transfer-libs2 \
+	    --opt o=bind \
+	    transfer_libs2;
+	docker container run --rm -v transfer_data:/opt/php -v transfer_libs:/usr/lib/x86_64-linux-gnu -v transfer_libs2:/lib/x86_64-linux-gnu 00f100/magento-php:temp sh -c "sleep 1; echo \"Copy to volume finish\"";
+	docker build --build-arg USER_ID=$(shell id -u) -t 00f100/magento-php-cli:7.3.8-ubuntu -f ubuntu/7.3.8/cli/Dockerfile ubuntu
+	docker build --build-arg USER_ID=$(shell id -u) -t 00f100/magento-php-fpm:7.3.8-ubuntu -f ubuntu/7.3.8/fpm/Dockerfile ubuntu
+	docker rmi 00f100/magento-php:temp;
+	docker volume rm transfer_data;
+	docker volume rm transfer_libs;
+	docker volume rm transfer_libs2;
+	sudo rm -Rf $(PWD)/ubuntu/7.3.8/transfer-data;
+	sudo rm -Rf $(PWD)/ubuntu/7.3.8/transfer-libs;
+	sudo rm -Rf $(PWD)/ubuntu/7.3.8/transfer-libs2;
 
 alpine-php-cli-fpm-7-3-8:
 	docker image build --build-arg USER_ID=$(shell id -u) --build-arg PHP_VERSION=7.3.8 -t 00f100/magento-php:temp alpine;
