@@ -20,8 +20,9 @@ RUN apk update \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer \
     && chown -R www-data:www-data /var/www \
-    && rm -Rf /var/cache/apk
+    && rm -Rf /var/cache/apk \
+    && echo "fs.inotify.max_user_watches=524288" > /etc/sysctl.d/99-sysctl.conf
 
-VOLUME /var/www/html /var/log/php /opt/php/var/log/ /var/www/.composer/
+VOLUME /var/www/html /var/log/php /opt/php/var/log /var/www/.composer /var/www/.ssh
 
 WORKDIR /var/www/html   

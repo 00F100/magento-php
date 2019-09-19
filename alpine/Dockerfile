@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 ARG USER_ID=1000
-ARG PHP_VERSION=7.2.20
+ARG PHP_VERSION=7.2.21
 
 ENV PATH "/opt/php/bin:/opt/php/sbin:$PATH"
 
@@ -39,11 +39,11 @@ RUN chmod +x /usr/local/bin/configure-php \
     && mkdir -p /opt/php-src \
     && mkdir -p /var/www/html \
     && useradd -u ${USER_ID} -d /var/www www-data -s /bin/sh -M \
+    && chown www-data:www-data /var/www \
     && cd /opt/php-src \
     && curl https://www.php.net/distributions/php-${PHP_VERSION}.tar.bz2 -o php-${PHP_VERSION}.tar.bz2 \
-    && tar -jxf php-${PHP_VERSION}.tar.bz2
-
-RUN cd /opt/php-src/php-${PHP_VERSION} \
+    && tar -jxf php-${PHP_VERSION}.tar.bz2 \
+    && cd /opt/php-src/php-${PHP_VERSION} \
     && configure-php \
     && cd /opt/php-src/php-${PHP_VERSION} \
     && make -j "$(nproc)"\

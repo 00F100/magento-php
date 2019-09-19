@@ -13,7 +13,7 @@ RUN apk update \
     && mkdir -p /var/www/html \
     && rm -Rf /var/cache/apk 
 
-VOLUME /var/www/html /var/log/php /opt/php/var/log/
+VOLUME /var/www/html /var/log/php /opt/php/var/log /var/www/.ssh
 
 EXPOSE 9000 9001
 
