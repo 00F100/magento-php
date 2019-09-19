@@ -24,8 +24,8 @@ To view your UID execute: `$ id -u`
 
 | SO | PHP Version | Command |
 |---|---|---|
-| Alpine | 7.3.8 | `$ make alpine-php-cli-fpm-7-3-8` |
-| Alpine | 7.2.21 | `$ make alpine-php-cli-fpm-7-2-21` |
-| Alpine | 7.1.30 | `$ make alpine-php-cli-fpm-7-1-30` |
-| Alpine | 7.0.33 | `$ make alpine-php-cli-fpm-7-0-33` |
-| Ubuntu | 7.3.8 | `$ make ubuntu-php-cli-fpm-7-3-8` |
+| Alpine | `7.3.8` | `$ make alpine-php-cli-fpm-7-3-8` |
+| Alpine | `7.2.21` | `$ make alpine-php-cli-fpm-7-2-21` |
+| Alpine | `7.1.30` | `$ make alpine-php-cli-fpm-7-1-30` |
+| Alpine | `7.0.33` | `$ make alpine-php-cli-fpm-7-0-33` |
+| Ubuntu | `7.3.8` | `$ make ubuntu-php-cli-fpm-7-3-8` |
