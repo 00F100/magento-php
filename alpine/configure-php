@@ -66,6 +66,7 @@ else
         --enable-fpm \
         --enable-intl \
         --enable-maintainer-zts \
+        --enable-sockets \
         --disable-rpath \
         --without-sqlite3 \
         --without-pdo-sqlite \

@@ -40,7 +40,7 @@ RUN chmod +x /usr/local/bin/configure-php \
     && mkdir -p /opt/php/fpm \
     && mkdir -p /opt/php-src \
     && mkdir -p /var/www/html \
-    && useradd -u ${USER_ID} -d /var/www www-data -s /bin/sh -M \
+    && useradd -u ${USER_ID} -g www-data -d /var/www www-data -s /bin/sh -M \
     && chown www-data:www-data /var/www \
     && cd /opt/php-src \
     && curl https://www.php.net/distributions/php-${PHP_VERSION}.tar.bz2 -o php-${PHP_VERSION}.tar.bz2 \

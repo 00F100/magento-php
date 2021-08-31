@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ARG USER_ID=1000
-ARG PHP_VERSION=7.3.8
+ARG PHP_VERSION=7.3.30
 
 ENV PATH "/opt/php/bin:/opt/php/sbin:$PATH"
 
