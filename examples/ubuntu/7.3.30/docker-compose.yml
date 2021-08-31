@@ -2,9 +2,9 @@ version: '3.5'
 
 services:
 
-  php-7.3.8:
-    container_name: php-7.3.8
-    image: 00f100/magento-php-fpm:7.3.8-alpine
+  php-7.3.30:
+    container_name: php-7.3.30
+    image: 00f100/magento-php-fpm:7.3.30-ubuntu
     volumes:
       - ${PWD}/fpm/php.ini:/opt/php/fpm/php.ini
       - ${PWD}/fpm/php-fpm.conf:/opt/php/etc/php-fpm.conf
